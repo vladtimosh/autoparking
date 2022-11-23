@@ -6,6 +6,11 @@
 #include <string>
 #include <ctime>
 
+// case 1 if next day time lower
+// 19:15 || 10:10 = 23:60 - 19:15 = 4:45 || 4:45 + 10:10 = 14:55 
+// case 2 if next day time higher
+// 10:10 || 19:15 = 23:60 - 10:10 = 13:50 || 13:50 + 19:15 = 33:05
+
 class DateTime
 {
 private:
@@ -20,9 +25,3 @@ public:
 
 	std::string toString();
 };
-
-// time_t now = time(0);
-//tm* localTM = localtime(&now);
-//std::cout << "Month " << localTM->tm_mon + 1;
-
-// https://unetway.com/tutorial/c-data-i-vrema#:~:text=time_t%20time%20(time_t%20*%20time)%3B,%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%BD%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B5%D1%82%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8%2C%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20.

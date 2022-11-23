@@ -25,19 +25,19 @@
 #include "File.h"
 
 #include <fstream>
+#include <sstream>
 #include <iostream>
 
 int main()
 {
-    //Car car("7777TT7");
-    //DateTime date;
-    //Client client("Vladislav", "Zavalei", car);
-    //ParkingPlace park(5, 1, 30.50);
-   
-    //File::write("test.txt", client, date, park);
-    std::vector<std::string> parked = File::read("test.txt");
-    for (auto& p : parked) {
-        std::cout << p << "\n";
+    std::string str = "215 1 30.500000 Vladislav Zavalei 7777TT7 11.23-20:55", word;
+    std::stringstream words(str);
+    std::vector<std::string> strs;
+    while (words >> word) {
+        strs.push_back(word);
     }
-    File::remove("test.txt", "9876AA1");
+
+    std::cout << strs[strs.size() - 1];
+
+    //File::remove("test.txt", "9876AA1");
 }
